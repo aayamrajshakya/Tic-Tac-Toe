@@ -11,3 +11,6 @@ git clone https://github.com/aayamrajshakya/Tic-Tac-Toe.git
 cd Tic-Tac-Toe
 python main.py
 ```
+<p>
+<img src="/assets/snap.png">
+</p>
