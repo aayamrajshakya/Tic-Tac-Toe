@@ -1,3 +1,5 @@
 # Tic-Tac-Toe
 
-A simple Tic-Tac-Toe game made out of boredom, where two players take turns entering their moves on a 3x3 game board. The game checks for win conditions and ends when a player wins or the game ends in a tie.
+A simple Tic-Tac-Toe game created out of boredom, allowing players to choose between a 3x3 or 5x5 game board.
+
+'rich' module must be installed for this program to be functional.
