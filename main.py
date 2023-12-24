@@ -6,7 +6,6 @@ ascii_art = """
 ┏┳┓┳┏┓  ┏┳┓┏┓┏┓  ┏┳┓┏┓┏┓
  ┃ ┃┃ ━━ ┃ ┣┫┃ ━━ ┃ ┃┃┣ 
  ┻ ┻┗┛   ┻ ┛┗┗┛   ┻ ┗┛┗┛
-
 [bold white] By @aayamrajshakya [/bold white]
 """
 
@@ -19,14 +18,10 @@ board_type = int(input('Select: '))
 playerX = input('Who is playing X? ')
 playerO = input('Who is playing O? ')
 print()
-turns = [
-    0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-    21, 22, 23, 24
-]
+turns = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
 
 n = 1
 board_range = 0
-
 
 def display_board_3x3():
   table = Table()
@@ -36,22 +31,15 @@ def display_board_3x3():
   table.add_row(f'|{board[6]}| |{board[7]}| |{board[8]}|')
   console.print(table)
 
-
 def display_board_5x5():
   table = Table()
   table.add_column("5x5 Mode", justify="center", style="cyan")
-  table.add_row(
-      f'|{board[0]}| |{board[1]}| |{board[2]}| |{board[3]}| |{board[4]}|')
-  table.add_row(
-      f'|{board[5]}| |{board[6]}| |{board[7]}| |{board[8]}| |{board[9]}|')
-  table.add_row(
-      f'|{board[10]}| |{board[11]}| |{board[12]}| |{board[13]}| |{board[14]}|')
-  table.add_row(
-      f'|{board[15]}| |{board[16]}| |{board[17]}| |{board[18]}| |{board[19]}|')
-  table.add_row(
-      f'|{board[20]}| |{board[21]}| |{board[22]}| |{board[23]}| |{board[24]}|')
+  table.add_row(f'|{board[0]}| |{board[1]}| |{board[2]}| |{board[3]}| |{board[4]}|')
+  table.add_row(f'|{board[5]}| |{board[6]}| |{board[7]}| |{board[8]}| |{board[9]}|')
+  table.add_row(f'|{board[10]}| |{board[11]}| |{board[12]}| |{board[13]}| |{board[14]}|')
+  table.add_row(f'|{board[15]}| |{board[16]}| |{board[17]}| |{board[18]}| |{board[19]}|')
+  table.add_row(f'|{board[20]}| |{board[21]}| |{board[22]}| |{board[23]}| |{board[24]}|')
   console.print(table)
-
 
 def play_game():
   global game_run
@@ -62,7 +50,6 @@ def play_game():
     check_diagonal()
     check_win()
     check_tie()
-
 
 def player_turn():
   global n
@@ -82,7 +69,6 @@ def player_turn():
     board[turn_choice] = 'O'
   n += 1
 
-
 def place_move(player):
   if board_type == 1:
     board_range = 9
@@ -98,7 +84,6 @@ def place_move(player):
     else:
       return turn_choice
 
-
 def check_row():
   global game_run
   if board_type == 1:
@@ -113,7 +98,6 @@ def check_row():
         game_run = False
         return board[i]
 
-
 def check_column():
   global game_run
   if board_type == 1:
@@ -127,7 +111,6 @@ def check_column():
           i + 20] != '-':
         game_run = False
         return board[i]
-
 
 def check_diagonal():
   global game_run
@@ -145,7 +128,6 @@ def check_diagonal():
     if diagonal1 or diagonal2:
       game_run = False
       return board[12]
-
 
 def check_win():
   win_by_column = check_column()
@@ -166,7 +148,6 @@ def check_win():
       display_board_5x5()
     print(f"{playerO} won!")
 
-
 def check_tie():
   global game_run
   if '-' not in board:
@@ -176,7 +157,6 @@ def check_tie():
       display_board_5x5()
     print("It's a tie!")
     game_run = False
-
 
 if __name__ == "__main__":
   play_game()
